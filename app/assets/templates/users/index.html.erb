@@ -1,0 +1,41 @@
+<h1>Users</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Bio</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users">
+      <td>
+        <a href="/users/{{user.id}}">
+          {{user.name}}
+        </a>
+      </td>
+        <td>
+          {{user.title}}
+        </td>
+        <td>
+          {{user.bio}}
+        </td>
+      <td>
+        <a href="/users/{{user.id}}/edit"
+          class="btn btn-primary"><i class="icon-edit"></i>
+          Edit
+        </a>
+        <button ng-click="destroy()" class="btn btn-danger">
+          <i class="icon-trash"></i> Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <a href='/users/new' class="btn btn-primary">
+    <i class="icon-plus"></i>New
+  </a>
+</p>

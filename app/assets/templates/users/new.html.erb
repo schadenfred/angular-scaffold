@@ -1,0 +1,68 @@
+<form name="newUser">
+  <fieldset>
+    <legend>
+      New User
+    </legend>
+      <div class="control-group">
+        <label class="control-label">
+          Name
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="user[name]"
+                   ng-model="user.name"
+                   class="text_field"
+                   required>
+          <span ng-show="newUser.name.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Title
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="user[title]"
+                   ng-model="user.title"
+                   class="text_field"
+                   required>
+          <span ng-show="newUser.title.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">
+          Bio
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="user[bio]"
+                   ng-model="user.bio"
+                   class="text_field"
+                   required>
+          <span ng-show="newUser.bio.$error.required"
+                class="help-inline">
+            Required
+          </span>
+        </div>
+      </div>
+    <div class="form-actions">
+      <button class="btn btn-success" ng-click="save()"
+        ng-disabled="isClean() || newUser.$invalid">
+        <i class="icon-save"></i> Save
+      </button>
+      <button ng-click="destroy()"
+              ng-show="user.id"
+              class="btn btn-danger">
+              <i class="icon-trash"></i> Delete
+      </button>
+      <a href="/users" class="btn">Back to users</a>
+    </div>
+  </fieldset>
+</form>
+
